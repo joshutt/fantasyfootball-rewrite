@@ -10,3 +10,5 @@ import './styles/app.scss';
 
 // start the Stimulus application
 // import './bootstrap';
+// JS file needed on every page
+import './core';
