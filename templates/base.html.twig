@@ -1,20 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ app.request.locale }}">
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            {{  encore_entry_link_tags('app') }}
-        {% endblock %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}WMFFL{% endblock title %}</title>
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% include 'header.html' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 
-        {% block body %}{% endblock %}
-        {% include 'footer.html' %}
-    </body>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+
+<body class="d-flex flex-column h-100">
+
+
+{% include 'header.html' %}
+
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+    <div class="container">
+        {% block body %}
+        {% endblock body %}
+    </div>
+</main>
+
+
+{% include 'footer.html' %}
+
+</body>
 </html>
